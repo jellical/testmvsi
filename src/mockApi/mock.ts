@@ -99,6 +99,7 @@ export const dragColumnApi = (columnId:string, position:number) => {
             storageToSave.columns = storageToSave.columns.filter(column => column.id !== columnId)
             foundColumn && storageToSave.columns.splice(position,0, foundColumn)
 
+            saveKanbanObjectToLocalStorage(storageToSave)
             resolve()
         }
 
