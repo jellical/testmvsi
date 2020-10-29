@@ -10,10 +10,10 @@ D&D cards \
 Rename and Rearange columns \
 Saving Data to Local Storage
 
-##Deployed version
+## Deployed version
 Available [here](https://testmvsi.s3-ap-southeast-2.amazonaws.com/index.html) 
 
-##List of possible improvements
+## List of possible improvements
 Check/add error handlers \
 Reusability (TopBar and Dialogs in particular) \
 Add Tests \
