@@ -23,8 +23,6 @@ export const getBoardApi = (searchQuery?:string) => {
     return new Promise<KanbanBoardInterface>((resolve) => {
         const storage = getKanbanObjectFromLocalStorage()
 
-        console.log('searchQuery', searchQuery)
-
         if(storage.cards && searchQuery) {
             storage.cards.forEach(card => {
                 if (!card.title.includes(searchQuery)) {
@@ -55,8 +53,6 @@ export const createColumnApi = (title:ColumnInterface['title']) => {
             cards: [],
             isHidden: false
         }
-
-        console.log(newColumn)
 
         if (storageToSave.columns) {
             storageToSave.columns.push(newColumn)
@@ -207,7 +203,6 @@ export const updateCardApi = (cardid:CardInterface['id'], update:Object) => {
 
             const updatedCard = _.assign(cardToChange, update)
 
-            console.log(updatedCard)
 
             storageToSave.cards[cardToChangeIndex] = updatedCard
 
@@ -223,8 +218,6 @@ export const updateCardApi = (cardid:CardInterface['id'], update:Object) => {
 export const deleteCardApi = (cardId:CardInterface['id']) => {
     return new Promise((resolve, reject) => {
         const storageToSave = getKanbanObjectFromLocalStorage()
-
-        console.log(cardId)
 
             if (storageToSave.cards) {
                 const cardToDelete = storageToSave.cards.find(card => card.id === cardId)

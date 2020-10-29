@@ -53,7 +53,6 @@ const ColumnDialog: React.FC<ColumnDialogProps> = (
                     defaultValue={ column.title }
                     value={ title }
                     onChange={(event) => {
-                        console.log( event)
                         setTitle(event.target.value )}
                     }
                     label="Title"
@@ -62,7 +61,7 @@ const ColumnDialog: React.FC<ColumnDialogProps> = (
             <DialogActions>
                 <Button
                     variant="contained"
-                    onClick={onClose}
+                    onClick={ onClose }
                 >
                     Cancel
                 </Button>
